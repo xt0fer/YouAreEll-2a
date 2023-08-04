@@ -13,33 +13,33 @@ package models;
 
 *
  */
-public class Message implements Comparable {
+public class Message { //implements Comparable {
 
     private String message = "";
-    private String toId = "";
-    private String fromId = "";
-    private String timestamp = "";
-    private String seqId = "";
+    private String toid = "";
+    private String fromid = "";
+    private transient String timestamp = "-";
+    private transient String sequence = "-";
 
     public Message (String message, String fromId, String toId) {
         this.message = message;
-        this.fromId = fromId;
-        this.toId = toId;
+        this.fromid = fromId;
+        this.toid = toId;
     }
 
     public Message (String message, String fromId) {
         this.message = message;
-        this.fromId = fromId;
-        this.toId = "";
+        this.fromid = fromId;
+        this.toid = "";
     }
 
     @Override
     public String toString() {
-        return "to: " + this.toId + "\nfrom: "+ this.fromId + "\n" + this.message + "\n----\n";
+        return "to: " + this.toid + "\nfrom: "+ this.fromid + "\n" + this.message + "\n----\n";
     }
 
-    public int compareTo(Object o) {
-        return this.seqId.compareTo(((Message) o).getSeqId());
+    public int compareTo(Message o) {
+        return this.sequence.compareTo(o.getSequence());
     }
 
     public String getMessage() {
@@ -50,27 +50,27 @@ public class Message implements Comparable {
         this.message = message;
     }
 
-    public String getToId() {
-        return toId;
+    public String getToid() {
+        return toid;
     }
 
-    public void setToId(String toId) {
-        this.toId = toId;
+    public void setToid(String toid) {
+        this.toid = toid;
     }
 
     public String getFromId() {
-        return fromId;
+        return fromid;
     }
 
     public void setFromId(String fromId) {
-        this.fromId = fromId;
+        this.fromid = fromId;
     }
 
     public String getTimestamp() {
         return timestamp;
     }
 
-    public String getSeqId() {
-        return seqId;
+    public String getSequence() {
+        return sequence;
     }
 }
