@@ -1,9 +1,15 @@
 package views;
 
+import models.Id;
 import models.Message;
 
 public class MessageTextView {
-    public String toString(Message m) {
-        return m.toString();
+    private Message msg;
+    public MessageTextView(Message msgToDisplay) {
+        this.msg = msgToDisplay;
+    }
+
+    public String toString() {
+        return this.msg.toString();
     } 
 }
