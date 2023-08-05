@@ -35,7 +35,7 @@ public class Message { //implements Comparable {
 
     @Override
     public String toString() {
-        return "to: " + this.toid + "\nfrom: "+ this.fromid + "\n" + this.message + "\n----\n";
+        return "to: " + this.toid + ", from: "+ this.fromid + ", " + this.message + ";";
     }
 
     public int compareTo(Message o) {

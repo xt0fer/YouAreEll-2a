@@ -18,12 +18,10 @@ import java.util.List;
 
 public class TransactionController {
     private String rootURL = "http://zipcode.rocks:8085";
-    private MessageController msgCtrl;
-    private IdController idCtrl;
     private HttpClient client = HttpClient.newHttpClient();
 
 
-    public TransactionController(MessageController m, IdController j) {}
+    public TransactionController() {}
 
     public String getIdsString() { //public List<Id> getIds() {
         try {
