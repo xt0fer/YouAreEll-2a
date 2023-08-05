@@ -37,9 +37,13 @@ public class IdController {
     public void doCommand(Command cmd) {
         if (cmd.getCmd() == Command.Verb.GETIDS) {
             List<Id> ids = tctrl.getIds();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < ids.size(); i++) {
                 System.out.println(new IdTextView(ids.get(i)).toString());
             }
+        }
+        if (cmd.getCmd() == Command.Verb.POSTID) {
+            Id result = tctrl.postId(cmd.getArg(1), cmd.getArg(2));
+            System.out.println(new IdTextView(result).toString());
         }
     }
 }
