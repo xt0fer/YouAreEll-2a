@@ -1,5 +1,8 @@
 package controllers;
 
+
+
+// Maybe I don't need this.
 public class ServerController {
     private String rootURL = "http://zipcode.rocks:8085";
 
