@@ -38,7 +38,7 @@ public class TransactionController {
 
     public List<Id> getIds() {
         String idsstring = this.getIdsString();
-        Gson gson = new Gson();
+        // liz says: huh? -> Gson gson = new Gson();
         Type listType = new TypeToken<List<Id>>() {}.getType();
         List<Id> idList = new Gson().fromJson(idsstring, listType);
         return idList;
